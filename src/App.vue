@@ -1,9 +1,22 @@
 <script setup>
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const userId = route.params.id;
 
 </script>
 
 <template>
   <div>
+    <div>
+    <h1>User Page</h1>
+    <p>User ID: {{ userId }}</p>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </nav>
+    <RouterView></RouterView>
+    </div>
   </div>
 </template>
 
